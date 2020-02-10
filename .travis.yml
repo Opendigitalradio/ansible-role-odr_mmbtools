@@ -8,7 +8,6 @@ env:
   matrix:
     - MOLECULE_DISTRO: debian10
     - MOLECULE_DISTRO: ubuntu1804
-    - MOLECULE_DISTRO: ubuntu1910
 
 install:
   - pip install molecule docker
