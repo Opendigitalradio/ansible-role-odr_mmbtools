@@ -1,48 +1,64 @@
-Role Name
-=========
+# Ansible Role: ODR mmbtools
 
-A brief description of the role goes here.
+[![Build Status](https://travis-ci.org/fauust/ansible-role-odr_mmbtools.svg?branch=master)](https://travis-ci.org/fauust/ansible-role-odr_mmbtools)
 
-Requirements
-------------
+An Ansible Role that install ODR tools (https://github.com/Opendigitalradio)
 
-Any pre-requisites that may not be covered by Ansible itself or the role should
-be mentioned here. For instance, if the role uses the EC2 module, it may be a
-good idea to mention in this section that the boto package is required.
+## Requirements
 
-Role Variables
---------------
+None.
 
-A description of the settable variables for this role should go here, including
-any variables that are in defaults/main.yml, vars/main.yml, and any variables
-that can/should be set via parameters to the role. Any variables that are read
-from other roles and/or the global scope (ie. hostvars, group vars, etc.) should
-be mentioned here as well.
+## Role Variables
 
-Dependencies
-------------
+Available variables are listed below, along with default values (see
+`defaults/main.yml`):
 
-A list of other roles hosted on Galaxy should go here, plus any details in
-regards to parameters that may need to be set for other roles, or variables that
-are used from other roles.
+    fdk_acc_tag: v0.1.6-dab
 
-Example Playbook
-----------------
+The version of fdk_acc to install (https://github.com/Opendigitalradio/fdk-aac).
+
+    ODR_AudioEnc_tag: v2.4.1
+
+The version of ODR_AudioEnc to install
+(https://github.com/Opendigitalradio/ODR-AudioEnc).
+
+    ODR_PadEnc_tag: v2.3.0
+
+The version of ODR_PadEnc to install
+(https://github.com/Opendigitalradio/ODR-PadEnc).
+
+    ODR_EncoderManager_tag: ansible_installation
+
+The version of ODR_EncoderManager to install
+(https://github.com/fauust/ODR-EncoderManager).
+
+    ODR_DabMux_tag: v3.0.1
+
+The version of ODR_DabMux to install
+(https://github.com/Opendigitalradio/ODR-DabMux).
+
+    encoder_supervisor_http_username: admin
+    encoder_supervisor_http_password: admin
+
+Supervisor HTTP admin interface credentials.
+
+## Dependencies
+
+None.
+
+## Example Playbook
 
 Including an example of how to use your role (for instance, with variables
 passed in as parameters) is always nice for users too:
 
     - hosts: servers
       roles:
-         - { role: username.rolename, x: 42 }
+         - odr_mmbtools
 
-License
--------
+## License
 
-BSD
+GNU General Public License v3.0
 
-Author Information
-------------------
+## Author Information
 
-An optional section for the role authors to include contact information, or a
-website (HTML is not allowed).
+fauust

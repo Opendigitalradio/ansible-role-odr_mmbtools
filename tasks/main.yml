@@ -1,2 +1,6 @@
 ---
-# tasks file for odr-tools
+- name: include task setup.yml
+  include_tasks: setup.yml
+
+- name: include task configure.yml
+  include_tasks: configure.yml

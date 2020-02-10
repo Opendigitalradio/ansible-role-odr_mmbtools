@@ -1,2 +1,51 @@
 ---
-# handlers file for odr-tools
+- name: compile and install fdk-acc
+  shell: |
+    ./bootstrap
+    ./configure
+    make -j$(nproc)
+    make install
+    ldconfig
+  args:
+    chdir: /opt/fdk-aac
+
+- name: compile and install ODR_AudioEnc
+  shell: |
+    ./bootstrap
+    ./configure --enable-alsa --enable-jack --enable-vlc
+    make -j$(nproc)
+    make install
+  args:
+    chdir: /opt/ODR-AudioEnc
+
+- name: compile and install ODR_PadEnc
+  shell: |
+    ./bootstrap
+    ./configure
+    make -j$(nproc)
+    make install
+  args:
+    chdir: /opt/ODR-PadEnc
+
+- name: compile and install ODR_DabMux
+  shell: |
+    ./bootstrap.sh
+    if arch | grep -q arm; then
+      ./configure --with-boost-libdir=/usr/lib/arm-linux-gnueabihf
+    else
+      ./configure
+    fi
+    make -j$(nproc)
+    make install
+  args:
+    chdir: /opt/ODR-DabMux
+
+- name: set /opt/ODR-EncoderManager permissions
+  file:
+    path: /opt/ODR-EncoderManager
+    owner: odr
+    group: odr
+    recurse: true
+
+- name: restart supervisor
+  service: name=supervisor state=restarted

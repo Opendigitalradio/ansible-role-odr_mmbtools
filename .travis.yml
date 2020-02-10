@@ -1,0 +1,25 @@
+---
+language: python
+services: docker
+
+env:
+  global:
+    - ROLE_NAME: odr_mmbtools
+  matrix:
+    - MOLECULE_DISTRO: debian10
+    - MOLECULE_DISTRO: ubuntu1804
+
+install:
+  - pip install molecule docker
+
+# before_script:
+#   # Use actual Ansible Galaxy role name for the project directory.
+#   - cd ../
+#   - mv ansible-role-$ROLE_NAME fauust.$ROLE_NAME
+#   - cd fauust.$ROLE_NAME
+
+script:
+  - molecule test
+
+# notifications:
+#   webhooks: https://galaxy.ansible.com/api/v1/notifications/

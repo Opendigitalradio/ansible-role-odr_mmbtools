@@ -1,2 +1,9 @@
 ---
-# defaults file for odr-tools
+fdk_acc_tag: v0.1.6-dab
+ODR_AudioEnc_tag: v2.4.1
+ODR_PadEnc_tag: v2.3.0
+ODR_EncoderManager_tag: ansible_installation
+ODR_DabMux_tag: v3.0.1
+
+encoder_supervisor_http_username: admin
+encoder_supervisor_http_password: admin
