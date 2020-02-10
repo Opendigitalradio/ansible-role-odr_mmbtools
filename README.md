@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/fauust/ansible-role-odr_mmbtools.svg?branch=master)](https://travis-ci.org/fauust/ansible-role-odr_mmbtools)
 
-An Ansible Role that install ODR tools (https://github.com/Opendigitalradio)
+An Ansible Role that install ODR tools (https://github.com/Opendigitalradio).
 
 ## Requirements
 
