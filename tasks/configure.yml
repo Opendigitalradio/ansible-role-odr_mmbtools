@@ -1,0 +1,39 @@
+---
+- name: copy config from sample config file
+  copy:
+    src: /opt/ODR-EncoderManager/config.json.sample
+    dest: /opt/ODR-EncoderManager/config.json
+    remote_src: true
+    owner: odr
+    group: odr
+    force: false
+
+- name: create empty file for symlink creation
+  file:
+    path: /opt/ODR-EncoderManager/supervisor-encoder.conf
+    state: touch
+    owner: odr
+    group: odr
+    access_time: preserve
+    modification_time: preserve
+
+- name: setup supervisor symlinks
+  file:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+    state: link
+  with_items:
+    - src: /opt/ODR-EncoderManager/supervisor-encoder.conf
+      dest: /etc/supervisor/conf.d/odr-encoder.conf
+    - src: /opt/ODR-EncoderManager/supervisor-gui.conf
+      dest: /etc/supervisor/conf.d/odr-gui.conf
+
+- name: configure supervisord http server
+  template:
+    src: supervisord.conf.j2
+    dest: /etc/supervisor/supervisord.conf
+    owner: root
+    group: root
+    mode: 0644
+  no_log: true
+  notify: restart supervisor
