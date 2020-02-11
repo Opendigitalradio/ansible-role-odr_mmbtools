@@ -12,12 +12,6 @@ env:
 install:
   - pip install molecule docker
 
-# before_script:
-#   # Use actual Ansible Galaxy role name for the project directory.
-#   - cd ../
-#   - mv ansible-role-$ROLE_NAME fauust.$ROLE_NAME
-#   - cd fauust.$ROLE_NAME
-
 script:
   - molecule test
 
