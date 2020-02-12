@@ -13,32 +13,36 @@ None.
 Available variables are listed below, along with default values (see
 `defaults/main.yml`):
 
-    fdk_acc_tag: v0.1.6-dab
+    odr_mmbtools_need_fdk_acc: true
+
+In future versions of ODR tools, the dependency on fdk-acc will be removed.
+
+    odr_mmbtools_fdk_acc_tag: v0.1.6-dab
 
 The version of fdk_acc to install (https://github.com/Opendigitalradio/fdk-aac).
 
-    ODR_AudioEnc_tag: v2.4.1
+    odr_mmbtools_AudioEnc_tag: v2.4.1
 
 The version of ODR_AudioEnc to install
 (https://github.com/Opendigitalradio/ODR-AudioEnc).
 
-    ODR_PadEnc_tag: v2.3.0
+    odr_mmbtools_PadEnc_tag: v2.3.0
 
 The version of ODR_PadEnc to install
 (https://github.com/Opendigitalradio/ODR-PadEnc).
 
-    ODR_EncoderManager_tag: ansible_installation
+    odr_mmbtools_EncoderManager_tag: ansible_installation
 
 The version of ODR_EncoderManager to install
 (https://github.com/fauust/ODR-EncoderManager).
 
-    ODR_DabMux_tag: v3.0.1
+    odr_mmbtools_DabMux_tag: v3.0.1
 
 The version of ODR_DabMux to install
 (https://github.com/Opendigitalradio/ODR-DabMux).
 
-    encoder_supervisor_http_username: admin
-    encoder_supervisor_http_password: admin
+    odr_mmbtools_supervisor_http_username: admin
+    odr_mmbtools_supervisor_http_password: admin
 
 Supervisor HTTP admin interface credentials.
 
