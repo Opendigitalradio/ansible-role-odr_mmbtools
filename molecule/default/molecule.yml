@@ -7,7 +7,7 @@ lint:
     config-file: molecule/default/yaml-lint.yml
 platforms:
   - name: instance
-    image: "fauust/docker-ansible-${MOLECULE_DISTRO:-debian10}:latest"
+    image: "fauust/docker-systemd-${MOLECULE_DISTRO:-debian10}:latest"
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
     command: /lib/systemd/systemd
