@@ -7,10 +7,10 @@ env:
     - ROLE_NAME: odr_mmbtools
   matrix:
     - MOLECULE_DISTRO: debian10
-    - MOLECULE_DISTRO: ubuntu1804
+    # - MOLECULE_DISTRO: ubuntu1804
 
 install:
-  - pip install molecule docker
+  - pip3 install ansible molecule docker
 
 script:
   - molecule test
