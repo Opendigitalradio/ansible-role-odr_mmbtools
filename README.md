@@ -20,13 +20,13 @@ odr_mmbtools_need_fdk_acc: true
 In future versions of ODR tools, the dependency on fdk-acc will be removed.
 
 ```yaml
-    odr_mmbtools_fdk_acc_tag: v0.1.6-dab
+odr_mmbtools_fdk_acc_tag: v0.1.6-dab
 ```
 
 The version of fdk_acc to install (<https://github.com/Opendigitalradio/fdk-aac>).
 
 ```yaml
-    odr_mmbtools_AudioEnc_tag: v2.4.1
+odr_mmbtools_AudioEnc_tag: v2.4.1
 ```
 
 The version of ODR_AudioEnc to install
