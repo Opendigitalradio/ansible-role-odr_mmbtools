@@ -10,7 +10,7 @@ env:
     - MOLECULE_DISTRO: ubuntu1804
 
 install:
-  - pip3 install ansible molecule docker
+  - pip3 install --quiet --requirement requirements.txt
 
 script:
   - molecule test
