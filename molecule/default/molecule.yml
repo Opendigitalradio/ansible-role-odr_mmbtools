@@ -20,7 +20,5 @@ provisioner:
     ANSIBLE_GATHERING: explicit
     ANSIBLE_FORCE_COLOR: true
     ANSIBLE_PYTHON_INTERPRETER: /usr/bin/python3
-    ANSIBLE_STRATEGY: mitogen_linear
-    ANSIBLE_STRATEGY_PLUGINS: $VIRTUAL_ENV/lib/python3.6/site-packages/ansible_mitogen/plugins/strategy
 verifier:
   name: testinfra
