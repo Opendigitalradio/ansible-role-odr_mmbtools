@@ -1,4 +1,4 @@
-install:
+venv:
 	pip3 install -r requirements.txt
 
 test:
