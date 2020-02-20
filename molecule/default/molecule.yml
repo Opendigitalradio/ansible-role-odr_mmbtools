@@ -20,9 +20,5 @@ provisioner:
     ANSIBLE_GATHERING: explicit
     ANSIBLE_FORCE_COLOR: true
     ANSIBLE_PYTHON_INTERPRETER: /usr/bin/python3
-  lint:
-    name: ansible-lint
 verifier:
   name: testinfra
-  lint:
-    name: flake8
