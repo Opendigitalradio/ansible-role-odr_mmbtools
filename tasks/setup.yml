@@ -4,7 +4,7 @@
 
 - name: clone fdk-acc repo (ODR version)
   git:
-    repo: 'https://github.com/Opendigitalradio/fdk-aac'
+    repo: "https://github.com/Opendigitalradio/fdk-aac"
     dest: /opt/fdk-aac
     version: "{{ odr_mmbtools_fdk_acc_tag }}"
   notify: compile and install fdk-acc
@@ -12,14 +12,14 @@
 
 - name: clone ODR-AudioEnc repo
   git:
-    repo: 'https://github.com/Opendigitalradio/ODR-AudioEnc'
+    repo: "https://github.com/Opendigitalradio/ODR-AudioEnc"
     dest: /opt/ODR-AudioEnc
     version: "{{ odr_mmbtools_AudioEnc_tag }}"
   notify: compile and install ODR_AudioEnc
 
 - name: clone ODR-PadEnc repo
   git:
-    repo: 'https://github.com/Opendigitalradio/ODR-PadEnc'
+    repo: "https://github.com/Opendigitalradio/ODR-PadEnc"
     dest: /opt/ODR-PadEnc
     version: "{{ odr_mmbtools_PadEnc_tag }}"
   notify: compile and install ODR_PadEnc
@@ -34,14 +34,14 @@
 
 - name: clone ODR-EncoderManager repo
   git:
-    repo: 'https://github.com/fauust/ODR-EncoderManager'
+    repo: "https://github.com/fauust/ODR-EncoderManager"
     dest: /opt/ODR-EncoderManager
     version: "{{ odr_mmbtools_EncoderManager_tag }}"
   notify: set /opt/ODR-EncoderManager permissions
 
 - name: clone ODR-DabMux repo
   git:
-    repo: 'https://github.com/Opendigitalradio/ODR-DabMux'
+    repo: "https://github.com/Opendigitalradio/ODR-DabMux"
     dest: /opt/ODR-DabMux
     version: "{{ odr_mmbtools_DabMux_tag }}"
   notify: compile and install ODR_DabMux

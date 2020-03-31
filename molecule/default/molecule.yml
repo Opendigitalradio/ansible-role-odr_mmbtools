@@ -4,9 +4,9 @@ dependency:
 driver:
   name: docker
 lint: |
-    yamllint . -c molecule/default/yamllint.config
-    ansible-lint
-    flake8
+  yamllint . -c molecule/default/yamllint.config
+  ansible-lint
+  flake8
 platforms:
   - name: instance
     image: "fauust/docker-systemd-${MOLECULE_DISTRO:-debian10}:latest"

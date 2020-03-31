@@ -69,7 +69,7 @@ None.
 ```yaml
 - hosts: servers
   roles:
-     - odr_mmbtools
+    - odr_mmbtools
 ```
 
 ## License
