@@ -4,6 +4,9 @@
 
 An Ansible Role that install ODR tools (<https://github.com/Opendigitalradio>).
 
+This role is available from Ansible Galaxy
+(<https://galaxy.ansible.com/fauust/odr_mmbtools>).
+
 ## Requirements
 
 None.
@@ -69,13 +72,9 @@ None.
 ```yaml
 - hosts: servers
   roles:
-    - odr_mmbtools
+    - fauust.odr_mmbtools
 ```
 
 ## License
 
 GNU General Public License v3.0
-
-## Author Information
-
-fauust
