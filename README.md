@@ -1,6 +1,6 @@
 # Ansible Role: ODR mmbtools
 
-[![travis build status](https://img.shields.io/travis/fauust/ansible-role-odr_mmbtools?logo=travis)](https://travis-ci.org/fauust/ansible-role-odr_mmbtools)
+[![travis build status](https://img.shields.io/travis/Opendigitalradio/ansible-role-odr_mmbtools?logo=travis)](https://travis-ci.org/Opendigitalradio/ansible-role-odr_mmbtools)
 
 An Ansible Role that install ODR tools (<https://github.com/Opendigitalradio>).
 
