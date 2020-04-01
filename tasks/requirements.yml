@@ -1,7 +1,4 @@
 ---
-- name: update apt cache
-  apt: update_cache=true cache_valid_time=600
-
 - name: install required packages (ODR-AudioEnc)
   apt:
     state: present
