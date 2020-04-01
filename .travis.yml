@@ -8,6 +8,7 @@ env:
   matrix:
     - MOLECULE_DISTRO: debian10
     - MOLECULE_DISTRO: ubuntu1804
+    - MOLECULE_DISTRO: ubuntu2004
 
 install:
   - pip3 install -r requirements.txt
