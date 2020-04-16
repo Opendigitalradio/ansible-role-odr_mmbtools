@@ -9,7 +9,7 @@ lint: |
   flake8
 platforms:
   - name: instance
-    image: "fauust/docker-systemd-${MOLECULE_DISTRO:-debian10}:latest"
+    image: "fauust/docker-ansible:${MOLECULE_DISTRO:-debian-10}"
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
     privileged: true
