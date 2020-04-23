@@ -4,6 +4,7 @@ dependency:
 driver:
   name: docker
 lint: |
+  set -e
   yamllint .
   ansible-lint
   flake8
@@ -13,7 +14,6 @@ platforms:
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
     privileged: true
-    pre_build_image: true
 provisioner:
   name: ansible
   env:
