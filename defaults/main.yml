@@ -2,7 +2,7 @@
 odr_mmbtools_need_fdk_acc: true
 odr_mmbtools_fdk_acc_tag: v0.1.6-dab
 
-odr_mmbtools_AudioEnc_tag: v2.5.0
+odr_mmbtools_AudioEnc_tag: v2.6.0
 odr_mmbtools_PadEnc_tag: v2.3.0
 odr_mmbtools_EncoderManager_tag: ansible_installation
 odr_mmbtools_DabMux_tag: v3.0.1
