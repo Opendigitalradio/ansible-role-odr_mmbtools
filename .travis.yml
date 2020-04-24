@@ -11,12 +11,17 @@ env:
     - MOLECULE_DISTRO: ubuntu-18.04
     - MOLECULE_DISTRO: ubuntu-20.04
 
+cache:
+  directories:
+    - $HOME/.cache/pre-commit
+
 install:
   - pip3 install -r requirements.txt
 
 script:
   - export ANSIBLE_STRATEGY=mitogen_linear
   - export ANSIBLE_STRATEGY_PLUGINS=${VIRTUAL_ENV}/lib/python${TRAVIS_PYTHON_VERSION}/site-packages/ansible_mitogen/plugins/strategy
+  - pre-commit run -c .travis-pre-commit-config.yaml -a
   - molecule --version
   - molecule test
 
