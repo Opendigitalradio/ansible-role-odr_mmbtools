@@ -50,7 +50,7 @@ repos:
         types: [shell]
       - id: docker-prettier
         name: Run prettier with docker
-        entry: mohrere/prettier:2.0.2 -c
+        entry: tmknom/prettier:latest -l
         language: docker_image
         files: "\\.(\
           css|less|scss\
