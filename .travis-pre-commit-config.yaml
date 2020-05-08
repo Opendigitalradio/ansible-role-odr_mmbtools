@@ -35,7 +35,7 @@ repos:
     hooks:
       - id: docker-markdownlint
         name: Run markdownlint with docker
-        entry: markdownlint/markdownlint
+        entry: markdownlint/markdownlint -r "~MD013"
         language: docker_image
         types: [markdown]
       - id: docker-shell-shfmt
