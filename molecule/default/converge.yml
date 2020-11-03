@@ -4,10 +4,5 @@
   vars:
     ansible_python_interpreter: /usr/bin/python3
 
-  pre_tasks:
-    - name: Update apt cache
-      apt:
-        update_cache: true
-
   roles:
     - role: ansible-role-odr_mmbtools

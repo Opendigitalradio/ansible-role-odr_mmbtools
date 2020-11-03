@@ -1,4 +1,8 @@
 ---
+- name: Update apt cache
+  apt:
+    update_cache: true
+
 - name: install required packages (ODR-AudioEnc)
   apt:
     state: present
