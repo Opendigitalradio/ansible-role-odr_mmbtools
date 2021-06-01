@@ -1,14 +1,4 @@
 ---
-- name: compile and install fdk-acc
-  shell: |
-    ./bootstrap
-    ./configure
-    make -j$(nproc)
-    make install
-    ldconfig
-  args:
-    chdir: /opt/fdk-aac
-
 - name: compile and install ODR_AudioEnc
   shell: |
     ./bootstrap

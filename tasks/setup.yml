@@ -2,14 +2,6 @@
 - name: include task requirements.yml
   include_tasks: requirements.yml
 
-- name: clone fdk-acc repo (ODR version)
-  git:
-    repo: "https://github.com/Opendigitalradio/fdk-aac"
-    dest: /opt/fdk-aac
-    version: "{{ odr_mmbtools_fdk_acc_tag }}"
-  notify: compile and install fdk-acc
-  when: odr_mmbtools_need_fdk_acc
-
 - name: clone ODR-AudioEnc repo
   git:
     repo: "https://github.com/Opendigitalradio/ODR-AudioEnc"

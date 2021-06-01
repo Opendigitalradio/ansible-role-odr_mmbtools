@@ -17,26 +17,14 @@ Available variables are listed below, along with default values (see
 `defaults/main.yml`):
 
 ```yaml
-odr_mmbtools_need_fdk_acc: true
-```
-
-In future versions of ODR tools, the dependency on fdk-acc will be removed.
-
-```yaml
-odr_mmbtools_fdk_acc_tag: v0.1.6-dab
-```
-
-The version of fdk_acc to install (<https://github.com/Opendigitalradio/fdk-aac>).
-
-```yaml
-odr_mmbtools_AudioEnc_tag: v2.5.0
+odr_mmbtools_AudioEnc_tag: v3.1.0
 ```
 
 The version of ODR_AudioEnc to install
 (<https://github.com/Opendigitalradio/ODR-AudioEnc>).
 
 ```yaml
-odr_mmbtools_PadEnc_tag: v2.3.0
+odr_mmbtools_PadEnc_tag: v3.0.0
 ```
 
 The version of ODR_PadEnc to install
@@ -50,7 +38,7 @@ The version of ODR_EncoderManager to install
 (<https://github.com/fauust/ODR-EncoderManager>).
 
 ```yaml
-odr_mmbtools_DabMux_tag: v3.0.1
+odr_mmbtools_DabMux_tag: v3.1.1
 ```
 
 The version of ODR_DabMux to install
@@ -77,4 +65,4 @@ None.
 
 ## License
 
-GNU General Public License v3.0
+## GNU General Public License v3.0
