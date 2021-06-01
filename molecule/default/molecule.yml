@@ -1,8 +1,6 @@
 ---
-dependency:
-  name: galaxy
 driver:
-  name: ${DRIVER_NAME:-podman}
+  name: docker
 platforms:
   - name: instance
     image: "fauust/docker-ansible:${MOLECULE_DISTRO:-debian-10}"
@@ -16,5 +14,7 @@ provisioner:
     ANSIBLE_GATHERING: explicit
     ANSIBLE_FORCE_COLOR: true
     ANSIBLE_PYTHON_INTERPRETER: /usr/bin/python3
+  playbooks:
+    converge: ${MOLECULE_PLAYBOOK:-converge.yml}
 verifier:
   name: testinfra
