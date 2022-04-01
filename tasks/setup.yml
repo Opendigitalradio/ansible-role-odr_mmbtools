@@ -1,23 +1,23 @@
 ---
 - name: include task requirements.yml
-  include_tasks: requirements.yml
+  ansible.builtin.include_tasks: requirements.yml
 
 - name: clone ODR-AudioEnc repo
-  git:
+  ansible.builtin.git:
     repo: "https://github.com/Opendigitalradio/ODR-AudioEnc"
     dest: /opt/ODR-AudioEnc
     version: "{{ odr_mmbtools_AudioEnc_tag }}"
   notify: compile and install ODR_AudioEnc
 
 - name: clone ODR-PadEnc repo
-  git:
+  ansible.builtin.git:
     repo: "https://github.com/Opendigitalradio/ODR-PadEnc"
     dest: /opt/ODR-PadEnc
     version: "{{ odr_mmbtools_PadEnc_tag }}"
   notify: compile and install ODR_PadEnc
 
 - name: create odr user
-  user:
+  ansible.builtin.user:
     name: odr
     shell: /bin/sh
     comment: odr
@@ -25,14 +25,14 @@
     groups: dialout,audio
 
 - name: clone ODR-EncoderManager repo
-  git:
+  ansible.builtin.git:
     repo: "https://github.com/fauust/ODR-EncoderManager"
     dest: /opt/ODR-EncoderManager
     version: "{{ odr_mmbtools_EncoderManager_tag }}"
   notify: set /opt/ODR-EncoderManager permissions
 
 - name: clone ODR-DabMux repo
-  git:
+  ansible.builtin.git:
     repo: "https://github.com/Opendigitalradio/ODR-DabMux"
     dest: /opt/ODR-DabMux
     version: "{{ odr_mmbtools_DabMux_tag }}"

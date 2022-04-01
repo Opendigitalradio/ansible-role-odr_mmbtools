@@ -1,10 +1,10 @@
 ---
 - name: Update apt cache
-  apt:
+  ansible.builtin.apt:
     update_cache: true
 
 - name: install required packages (ODR-AudioEnc)
-  apt:
+  ansible.builtin.apt:
     state: present
     name:
       - automake
@@ -22,13 +22,13 @@
       - vlc-plugin-base
 
 - name: install required packages (ODR-PadEnc)
-  apt:
+  ansible.builtin.apt:
     state: present
     name:
       - libmagickwand-dev
 
 - name: install required packages (ODR-EncoderManager)
-  apt:
+  ansible.builtin.apt:
     state: present
     name:
       - python3-cherrypy3
@@ -38,7 +38,7 @@
       - supervisor
 
 - name: install required packages (ODR-DabMux)
-  apt:
+  ansible.builtin.apt:
     state: present
     name:
       - automake

@@ -1,6 +1,6 @@
 ---
 - name: compile and install ODR_AudioEnc
-  shell: |
+  ansible.builtin.shell: |
     ./bootstrap
     ./configure --enable-alsa --enable-jack --enable-vlc
     make -j$(nproc)
@@ -9,7 +9,7 @@
     chdir: /opt/ODR-AudioEnc
 
 - name: compile and install ODR_PadEnc
-  shell: |
+  ansible.builtin.shell: |
     ./bootstrap
     ./configure
     make -j$(nproc)
@@ -18,7 +18,7 @@
     chdir: /opt/ODR-PadEnc
 
 - name: compile and install ODR_DabMux
-  shell: |
+  ansible.builtin.shell: |
     ./bootstrap.sh
     if arch | grep -q arm; then
       ./configure --with-boost-libdir=/usr/lib/arm-linux-gnueabihf
@@ -31,11 +31,11 @@
     chdir: /opt/ODR-DabMux
 
 - name: set /opt/ODR-EncoderManager permissions
-  file:
+  ansible.builtin.file:
     path: /opt/ODR-EncoderManager
     owner: odr
     group: odr
     recurse: true
 
 - name: restart supervisor
-  service: name=supervisor state=restarted
+  ansible.builtin.service: name=supervisor state=restarted

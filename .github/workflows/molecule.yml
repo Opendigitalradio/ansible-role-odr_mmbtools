@@ -12,25 +12,35 @@ jobs:
     name: Molecule
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
         include:
           - distro: ubuntu-18.04
             playbook: converge.yml
           - distro: ubuntu-20.04
             playbook: converge.yml
-          - distro: ubuntu-20.10
+          - distro: ubuntu-21.04
             playbook: converge.yml
           - distro: debian-10
+            playbook: converge.yml
+          - distro: debian-11
             playbook: converge.yml
           - distro: debian-sid
             playbook: converge.yml
 
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-python@v2
+      - uses: actions/checkout@v3
       - name: Install requirements
-        run: pip3 install -r requirements.txt
-
+        run: |
+          python3 -m pip install --upgrade pip
+          python3 -m pip install -r requirements.txt
+        # This is necessary on GH Actions to allow running systemd in rootless containers
+        # see: https://github.com/actions/virtual-environments/issues/3536
+        # see: https://github.com/ansible-community/molecule/discussions/3155
+      - name: Start systemd user service
+        run: |
+          loginctl enable-linger $(whoami)
+          sleep 1
       - name: Run molecule
         run: molecule test
         env:

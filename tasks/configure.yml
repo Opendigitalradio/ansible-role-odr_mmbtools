@@ -1,6 +1,6 @@
 ---
 - name: copy config from sample config file
-  copy:
+  ansible.builtin.copy:
     src: /opt/ODR-EncoderManager/config.json.sample
     dest: /opt/ODR-EncoderManager/config.json
     remote_src: true
@@ -10,7 +10,7 @@
     force: false
 
 - name: create empty file for symlink creation
-  file:
+  ansible.builtin.file:
     path: /opt/ODR-EncoderManager/supervisor-encoder.conf
     state: touch
     owner: odr
@@ -20,7 +20,7 @@
     modification_time: preserve
 
 - name: setup supervisor symlinks
-  file:
+  ansible.builtin.file:
     src: "{{ item.src }}"
     dest: "{{ item.dest }}"
     state: link
@@ -31,7 +31,7 @@
       dest: /etc/supervisor/conf.d/odr-gui.conf
 
 - name: configure supervisord http server
-  template:
+  ansible.builtin.template:
     src: supervisord.conf.j2
     dest: /etc/supervisor/supervisord.conf
     owner: root
