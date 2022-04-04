@@ -1,8 +1,8 @@
 ---
-odr_mmbtools_AudioEnc_tag: v3.1.0
+odr_mmbtools_AudioEnc_tag: v3.2.0
 odr_mmbtools_PadEnc_tag: v3.0.0
 odr_mmbtools_EncoderManager_tag: ansible_installation
-odr_mmbtools_DabMux_tag: v3.1.1
+odr_mmbtools_DabMux_tag: v4.1.0
 
 odr_mmbtools_supervisor_http_username: admin
 odr_mmbtools_supervisor_http_password: admin
