@@ -1,6 +1,3 @@
 ---
 - name: include task setup.yml
   ansible.builtin.include_tasks: setup.yml
-
-- name: include task configure.yml
-  ansible.builtin.include_tasks: configure.yml

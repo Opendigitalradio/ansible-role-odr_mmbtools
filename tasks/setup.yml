@@ -16,21 +16,6 @@
     version: "{{ odr_mmbtools_PadEnc_tag }}"
   notify: compile and install ODR_PadEnc
 
-- name: create odr user
-  ansible.builtin.user:
-    name: odr
-    shell: /bin/sh
-    comment: odr
-    state: present
-    groups: dialout,audio
-
-- name: clone ODR-EncoderManager repo
-  ansible.builtin.git:
-    repo: "https://github.com/fauust/ODR-EncoderManager"
-    dest: /opt/ODR-EncoderManager
-    version: "{{ odr_mmbtools_EncoderManager_tag }}"
-  notify: set /opt/ODR-EncoderManager permissions
-
 - name: clone ODR-DabMux repo
   ansible.builtin.git:
     repo: "https://github.com/Opendigitalradio/ODR-DabMux"

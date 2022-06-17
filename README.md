@@ -32,13 +32,6 @@ The version of ODR_PadEnc to install
 (<https://github.com/Opendigitalradio/ODR-PadEnc>).
 
 ```yaml
-odr_mmbtools_EncoderManager_tag: ansible_installation
-```
-
-The version of ODR_EncoderManager to install
-(<https://github.com/fauust/ODR-EncoderManager>).
-
-```yaml
 odr_mmbtools_DabMux_tag: v3.1.1
 ```
 

@@ -16,18 +16,8 @@ binaries = ['/usr/local/bin/odr-audioenc',
 
 def test_binary_file_exists(host):
     for binary in binaries:
-        f = host.file(binary)
-        assert f.exists
-        assert f.user == 'root'
-        assert f.group == 'root'
-        assert f.mode == 0o755
-
-
-def test_port_listening(host):
-    assert host.socket("tcp://0.0.0.0:8080").is_listening
-    assert host.socket("tcp://0.0.0.0:9001").is_listening
-
-
-def test_service_enabled_and_running(host):
-    assert host.service("supervisor").is_enabled
-    assert host.service("supervisor").is_running
+        file = host.file(binary)
+        assert file.exists
+        assert file.user == 'root'
+        assert file.group == 'root'
+        assert file.mode == 0o755

@@ -29,15 +29,3 @@
     make install
   args:
     chdir: /opt/ODR-DabMux
-
-- name: set /opt/ODR-EncoderManager permissions
-  ansible.builtin.file:
-    path: /opt/ODR-EncoderManager
-    owner: odr
-    group: odr
-    recurse: true
-
-- name: restart supervisor
-  ansible.builtin.service:
-    name: supervisor
-    state: restarted
