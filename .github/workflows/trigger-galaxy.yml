@@ -9,6 +9,8 @@ on:
 jobs:
   trigger:
     runs-on: ubuntu-latest
+    if: >
+      github.repository == 'fauust/ansible-role-odr_mmbtools'
     steps:
       - uses: actions/checkout@v3
       - name: Galaxy
