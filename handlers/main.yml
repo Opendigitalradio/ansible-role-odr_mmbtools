@@ -38,4 +38,6 @@
     recurse: true
 
 - name: restart supervisor
-  ansible.builtin.service: name=supervisor state=restarted
+  ansible.builtin.service:
+    name: supervisor
+    state: restarted
