@@ -1,33 +1,24 @@
 ---
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.3.0
+    rev: v4.4.0
     hooks:
       - id: check-added-large-files
-      - id: check-ast
       - id: check-case-conflict
       - id: check-executables-have-shebangs
       - id: check-merge-conflict
       - id: check-yaml
         name: Check yaml files
-      - id: debug-statements
-        name: Check for Python debug statements
       - id: trailing-whitespace
         name: Check trailing whitespace
         args: [--markdown-linebreak-ext=md]
-  - repo: https://gitlab.com/pycqa/flake8.git
-    rev: 3.9.2
-    hooks:
-      - id: flake8
-        name: Check python (flake8)
-        args: ["--ignore=E501,E226"]
   - repo: https://github.com/adrienverge/yamllint.git
-    rev: v1.26.3
+    rev: v1.29.0
     hooks:
       - id: yamllint
         name: Check yaml files (yamllint)
   - repo: https://github.com/ansible/ansible-lint.git
-    rev: v6.3.0
+    rev: v6.13.1
     hooks:
       - id: ansible-lint
         name: Check ansible files (ansible-lint)
@@ -36,6 +27,13 @@ repos:
         # args: ["-x", "602"]
         exclude_types: [markdown, shell]
         types: [yaml]
+  - repo: https://github.com/codespell-project/codespell
+    rev: v2.2.2
+    hooks:
+      - id: codespell
+        name: Checks for common misspellings in text files
+        entry: codespell
+        language: python
   - repo: local
     hooks:
       - id: docker-markdownlint
@@ -57,15 +55,15 @@ repos:
         name: Run prettier with docker
         entry: tmknom/prettier:latest -l
         language: docker_image
-        files: "\\.(\
-          css|less|scss\
-          |graphql|gql\
-          |html\
-          |js|jsx\
-          |json\
-          |md|markdown|mdown|mkdn\
-          |mdx\
-          |ts|tsx\
-          |vue\
-          |yaml|yml\
-          )$"
+        files: |
+          (?x)\.(
+            css|less|scss
+            graphql|gql|
+            html|
+            js|jsx|ts|tsx|
+            json|
+            md|markdown|mdown|mkdn|
+            mdx|
+            vue|
+            yaml|yml
+          )$
