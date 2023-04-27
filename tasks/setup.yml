@@ -1,22 +1,22 @@
 ---
-- name: include task requirements.yml
+- name: Include task requirements.yml
   ansible.builtin.include_tasks: requirements.yml
 
-- name: clone ODR-AudioEnc repo
+- name: Clone ODR-AudioEnc repo
   ansible.builtin.git:
     repo: "https://github.com/Opendigitalradio/ODR-AudioEnc"
     dest: /opt/ODR-AudioEnc
     version: "{{ odr_mmbtools_AudioEnc_tag }}"
   notify: compile and install ODR_AudioEnc
 
-- name: clone ODR-PadEnc repo
+- name: Clone ODR-PadEnc repo
   ansible.builtin.git:
     repo: "https://github.com/Opendigitalradio/ODR-PadEnc"
     dest: /opt/ODR-PadEnc
     version: "{{ odr_mmbtools_PadEnc_tag }}"
   notify: compile and install ODR_PadEnc
 
-- name: clone ODR-DabMux repo
+- name: Clone ODR-DabMux repo
   ansible.builtin.git:
     repo: "https://github.com/Opendigitalradio/ODR-DabMux"
     dest: /opt/ODR-DabMux

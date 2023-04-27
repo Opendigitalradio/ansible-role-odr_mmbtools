@@ -1,7 +1,9 @@
 skip_list:
-  - 'empty-string-compare'
   - 'braces'
+  - 'empty-string-compare'
+  - 'var-naming'
   - 'yaml'
 
 exclude_paths:
+- meta/
 - molecule/

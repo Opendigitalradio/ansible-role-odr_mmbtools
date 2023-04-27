@@ -1,5 +1,5 @@
 ---
-- name: compile and install ODR_AudioEnc
+- name: Compile and install ODR_AudioEnc
   ansible.builtin.shell: |
     ./bootstrap
     ./configure --enable-alsa --enable-jack --enable-vlc
@@ -8,7 +8,7 @@
   args:
     chdir: /opt/ODR-AudioEnc
 
-- name: compile and install ODR_PadEnc
+- name: Compile and install ODR_PadEnc
   ansible.builtin.shell: |
     ./bootstrap
     ./configure
@@ -17,7 +17,7 @@
   args:
     chdir: /opt/ODR-PadEnc
 
-- name: compile and install ODR_DabMux
+- name: Compile and install ODR_DabMux
   ansible.builtin.shell: |
     ./bootstrap.sh
     if arch | grep -q arm; then

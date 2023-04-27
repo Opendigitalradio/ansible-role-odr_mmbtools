@@ -3,7 +3,7 @@
   ansible.builtin.apt:
     update_cache: true
 
-- name: install required packages (ODR-AudioEnc)
+- name: Install required packages (ODR-AudioEnc)
   ansible.builtin.apt:
     state: present
     name:
@@ -29,13 +29,13 @@
       - vlc-data
       - vlc-plugin-base
 
-- name: install required packages (ODR-PadEnc)
+- name: Install required packages (ODR-PadEnc)
   ansible.builtin.apt:
     state: present
     name:
       - libmagickwand-dev
 
-- name: install required packages (ODR-DabMux)
+- name: Install required packages (ODR-DabMux)
   ansible.builtin.apt:
     state: present
     name:
