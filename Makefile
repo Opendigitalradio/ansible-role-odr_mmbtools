@@ -1,4 +1,5 @@
 VENV_DIR := .venv
+VENDOR_DIR := .vendor
 SHELL := /usr/bin/env bash
 .DEFAULT_GOAL := help
 
@@ -12,6 +13,7 @@ venv: ## Create python3 venv if it does not exists
 install: ## Install all necessary tools
 	$(MAKE) venv
 	$(MAKE) install-pip-packages
+	$(MAKE) install-galaxy
 	@echo -e "\n--> You should now activate the python3 venv with:"
 	@echo -e "source $(VENV_DIR)/bin/activate"
 
@@ -22,6 +24,10 @@ install-pip-packages: ## Install python3 requirements
 			pip3 install -U pip; \
 			pip3 install -r requirements.txt; \
 	)
+
+install-galaxy: ## Install galaxy requirements
+	$(info --> Install galaxy requirements)
+	ansible-galaxy collection install -r requirements.yml --force -p $(VENDOR_DIR)/collections
 
 upgrade-pip-packages: ## Upgrade python3 requirements
 	$(shell command -v pip3) install -U -r requirements.txt
@@ -40,3 +46,4 @@ pre-commit-run-all: ## Run pre-commit on the whole repository
 
 clean: ## Clean venv
 	[[ ! -d $(VENV_DIR) ]] || rm -rf $(VENV_DIR)
+	[[ ! -d $(VENDOR_DIR) ]] || rm -rf $(VENDOR_DIR)
