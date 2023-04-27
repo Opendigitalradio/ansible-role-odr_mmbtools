@@ -7,18 +7,18 @@
     repo: "https://github.com/Opendigitalradio/ODR-AudioEnc"
     dest: /opt/ODR-AudioEnc
     version: "{{ odr_mmbtools_AudioEnc_tag }}"
-  notify: compile and install ODR_AudioEnc
+  notify: Compile and install ODR_AudioEnc
 
 - name: Clone ODR-PadEnc repo
   ansible.builtin.git:
     repo: "https://github.com/Opendigitalradio/ODR-PadEnc"
     dest: /opt/ODR-PadEnc
     version: "{{ odr_mmbtools_PadEnc_tag }}"
-  notify: compile and install ODR_PadEnc
+  notify: Compile and install ODR_PadEnc
 
 - name: Clone ODR-DabMux repo
   ansible.builtin.git:
     repo: "https://github.com/Opendigitalradio/ODR-DabMux"
     dest: /opt/ODR-DabMux
     version: "{{ odr_mmbtools_DabMux_tag }}"
-  notify: compile and install ODR_DabMux
+  notify: Compile and install ODR_DabMux

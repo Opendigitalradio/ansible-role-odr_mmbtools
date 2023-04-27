@@ -3,7 +3,7 @@ driver:
   name: podman
 platforms:
   - name: instance
-    image: "fauust/docker-ansible:${MOLECULE_DISTRO:-debian-11}"
+    image: "ghcr.io/fauust/docker-ansible:${MOLECULE_DISTRO:-debian-11}"
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
     override_command: false
@@ -11,9 +11,17 @@ platforms:
 provisioner:
   name: ansible
   env:
-    ANSIBLE_GATHERING: explicit
+    ANSIBLE_DISPLAY_OK_HOSTS: "false"
+    ANSIBLE_DISPLAY_SKIPPED_HOSTS: false
     ANSIBLE_FORCE_COLOR: true
+    ANSIBLE_GATHERING: explicit
   playbooks:
     converge: ${MOLECULE_PLAYBOOK:-converge.yml}
 verifier:
   name: testinfra
+scenario:
+  test_sequence:
+    - create
+    - converge
+    - idempotence
+    - verify
