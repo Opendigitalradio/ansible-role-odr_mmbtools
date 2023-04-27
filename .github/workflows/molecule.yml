@@ -30,7 +30,6 @@ jobs:
       - name: Install requirements
         run: |
           make install
-          source .venv/bin/activate
         # This is necessary on GH Actions to allow running systemd in rootless containers
         # see: https://github.com/actions/virtual-environments/issues/3536
         # see: https://github.com/ansible-community/molecule/discussions/3155
@@ -39,7 +38,9 @@ jobs:
           loginctl enable-linger $(whoami)
           sleep 1
       - name: Run molecule
-        run: molecule test
+        run: |
+          source .venv/bin/activate
+          molecule test
         env:
           PY_COLORS: "1"
           ANSIBLE_FORCE_COLOR: "1"
