@@ -30,6 +30,7 @@ jobs:
       - name: Install requirements
         run: |
           make install
+          source .venv/bin/activate
         # This is necessary on GH Actions to allow running systemd in rootless containers
         # see: https://github.com/actions/virtual-environments/issues/3536
         # see: https://github.com/ansible-community/molecule/discussions/3155
